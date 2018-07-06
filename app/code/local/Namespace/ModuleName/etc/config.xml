@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Namespace_ModuleName>
+            <version>0.1.0</version>
+        </Namespace_ModuleName>
+    </modules>    
+    <global>
+        <helpers>
+            <namespace_modulename>
+                <class>Namespace_ModuleName_Helper</class>
+            </namespace_modulename>
+        </helpers>
+        <models>
+            <namespace_modulename>
+                <class>Namespace_ModuleName_Model</class>
+            </namespace_modulename>
+        </models>
+    </global>
+</config>
+

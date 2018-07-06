@@ -1,0 +1,14 @@
+{
+    "name": "namespace/moduleName",
+    "description": "",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "",
+            "email": ""
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
