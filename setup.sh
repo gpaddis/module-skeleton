@@ -23,17 +23,17 @@ lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 ## Change all references in the files #########################################
 echo "Replacing namespace and module name in all files..."
 
-sed -i -e "s/Namespace/$namespace/g" modman
-sed -i -e "s/ModuleName/$moduleName/g" modman
+sed -i '' "s/Namespace/$namespace/g" modman
+sed -i '' "s/ModuleName/$moduleName/g" modman
 
-sed -i -e "s/namespace/$lowercaseNamespace/g" composer.json
-sed -i -e "s/moduleName/$lowercaseModuleName/g" composer.json
+sed -i '' "s/namespace/$lowercaseNamespace/g" composer.json
+sed -i '' "s/moduleName/$lowercaseModuleName/g" composer.json
 
-sed -i -e "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
-sed -i -e "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
-sed -i -e "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
-sed -i -e "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
-sed -i -e "s/namespace_modulename/$lowercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
+sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
+sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
+sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
+sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
+sed -i '' "s/namespace_modulename/$lowercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
 
 ## Rename files and directories ###############################################
 echo "Moving the files to the new directory..."
