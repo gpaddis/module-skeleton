@@ -13,8 +13,9 @@ while [[ $moduleName = "" ]]; do
    read -p "Type the module name in CamelCase, then press [Enter]: " moduleName
 done
 
-lowercaseNamespace=$(sed -e 's/\(.*\)/\L\1/' <<< "$namespace")
-lowercaseModuleName=$(sed -e 's/\(.*\)/\L\1/' <<< "$moduleName")
+lowercaseNamespace=$(echo "$namespace" | tr '[:upper:]' '[:lower:]')
+lowercaseModuleName=$(echo "$moduleName" | tr '[:upper:]' '[:lower:]')
+
 uppercaseName="${namespace}_${moduleName}"
 lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 
