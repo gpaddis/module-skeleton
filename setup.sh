@@ -8,7 +8,7 @@ while [[ $namespace = "" ]]; do
    read -p "Type the namespace name in CamelCase, then press [Enter]: " namespace
 done
 
-moduleName=
+moduleName=""
 while [[ $moduleName = "" ]]; do
    read -p "Type the module name in CamelCase, then press [Enter]: " moduleName
 done
@@ -23,17 +23,17 @@ lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 ## Change all references in the files #########################################
 echo "Replacing namespace and module name in all files..."
 
-sed -i '' "s/Namespace/$namespace/g" modman
-sed -i '' "s/ModuleName/$moduleName/g" modman
+sed -i "s/Namespace/$namespace/g" modman
+sed -i "s/ModuleName/$moduleName/g" modman
 
-sed -i '' "s/namespace/$lowercaseNamespace/g" composer.json
-sed -i '' "s/moduleName/$lowercaseModuleName/g" composer.json
+sed -i "s/namespace/$lowercaseNamespace/g" composer.json
+sed -i "s/moduleName/$lowercaseModuleName/g" composer.json
 
-sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
-sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
-sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
-sed -i '' "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
-sed -i '' "s/namespace_modulename/$lowercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
+sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
+sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
+sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
+sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
+sed -i "s/namespace_modulename/$lowercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
 
 ## Rename files and directories ###############################################
 echo "Moving the files to the new directory..."
