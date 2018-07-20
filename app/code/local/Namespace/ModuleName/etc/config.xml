@@ -4,8 +4,13 @@
         <Namespace_ModuleName>
             <version>0.1.0</version>
         </Namespace_ModuleName>
-    </modules>    
+    </modules>
     <global>
+        <blocks>
+            <namespace_modulename>
+                <class>Namespace_ModuleName_Block</class>
+            </namespace_modulename>
+        </blocks>
         <helpers>
             <namespace_modulename>
                 <class>Namespace_ModuleName_Helper</class>
@@ -18,4 +23,3 @@
         </models>
     </global>
 </config>
-

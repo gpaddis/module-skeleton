@@ -30,6 +30,7 @@ sed -i "s/namespace/$lowercaseNamespace/g" composer.json
 sed -i "s/moduleName/$lowercaseModuleName/g" composer.json
 
 sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
+sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Block/Bar.php
 sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
 sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
 sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
