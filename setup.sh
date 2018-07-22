@@ -13,28 +13,34 @@ while [[ $moduleName = "" ]]; do
    read -p "Type the module name in CamelCase, then press [Enter]: " moduleName
 done
 
+authorName=""
+while [[ $authorName = "" ]]; do
+   read -p "Type your first and last name, then press [Enter]: " authorName
+done
+
+authorEmail=""
+while [[ $authorEmail = "" ]]; do
+   read -p "Type your email address, then press [Enter]: " authorEmail
+done
+
 lowercaseNamespace=$(echo "$namespace" | tr '[:upper:]' '[:lower:]')
 lowercaseModuleName=$(echo "$moduleName" | tr '[:upper:]' '[:lower:]')
 
 uppercaseName="${namespace}_${moduleName}"
 lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 
-
 ## Change all references in the files #########################################
-echo "Replacing namespace and module name in all files..."
+echo "Replacing namespace, module name and author information in all files..."
 
-sed -i "s/Namespace/$namespace/g" modman
-sed -i "s/ModuleName/$moduleName/g" modman
+grep -Rl "Namespace_ModuleName" --exclude "$0" | xargs sed -i "s/Namespace_ModuleName/$uppercaseName/g"
+grep -Rl "namespace_modulename" --exclude "$0" | xargs sed -i "s/namespace_modulename/$lowercaseName/g"
+grep -Rl "Namespace" --exclude "$0" | xargs sed -i "s/Namespace/$namespace/g"
+grep -Rl "ModuleName" --exclude "$0" | xargs sed -i "s/ModuleName/$moduleName/g"
+grep -Rl "namespace" --exclude "$0" | xargs sed -i "s/namespace/$lowercaseNamespace/g"
+grep -Rl "moduleName" --exclude "$0" | xargs sed -i "s/moduleName/$lowercaseModuleName/g"
 
-sed -i "s/namespace/$lowercaseNamespace/g" composer.json
-sed -i "s/moduleName/$lowercaseModuleName/g" composer.json
-
-sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/etc/modules/Namespace_ModuleName.xml
-sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Block/Bar.php
-sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Helper/Data.php
-sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/Model/Foo.php
-sed -i "s/Namespace_ModuleName/$uppercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
-sed -i "s/namespace_modulename/$lowercaseName/g" app/code/local/Namespace/ModuleName/etc/config.xml
+grep -Rl "authorName" --exclude "$0" | xargs sed -i "s/authorName/$authorName/g"
+grep -Rl "authorEmail" --exclude "$0" | xargs sed -i "s/authorEmail/$authorEmail/g"
 
 ## Rename files and directories ###############################################
 echo "Moving the files to the new directory..."
