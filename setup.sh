@@ -1,6 +1,11 @@
 #!/bin/bash
-# Script to reset the repo history, disconnect it from the
-# skeleton project and customize the existing files.
+#
+# This script customizes the skeleton module files replacing all dummy values
+# with the variables provided, then resets the repo history, disconnecting
+# it from the skeleton project and starting a fresh git repository.
+#
+# Author: Gianpiero Addis
+# Package: https://github.com/gpaddis/module-skeleton
 
 ## Basic Values ###############################################################
 namespace=""
