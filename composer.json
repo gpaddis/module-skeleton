@@ -4,8 +4,8 @@
     "type": "magento-module",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "authorName",
+            "email": "authorEmail"
         }
     ],
     "require": {
