@@ -48,13 +48,15 @@ grep -Rl "authorName" --exclude "$0" | xargs sed -i "s/authorName/$authorName/g"
 grep -Rl "authorEmail" --exclude "$0" | xargs sed -i "s/authorEmail/$authorEmail/g"
 
 ## Rename files and directories ###############################################
-echo "Moving the files to the new directory..."
+echo "Renaming files and directories..."
 
-mv app/etc/modules/Namespace_ModuleName.xml app/etc/modules/${namespace}_${moduleName}.xml
+mv app/etc/modules/Namespace_ModuleName.xml app/etc/modules/${uppercaseName}.xml
 
 mkdir -p app/code/local/$namespace
 mv app/code/local/Namespace/ModuleName app/code/local/$namespace/$moduleName
 rmdir app/code/local/Namespace
+
+mv app/locale/en_US/Namespace_ModuleName.csv app/locale/en_US/${uppercaseName}.csv
 
 ## Add the module name to README ##############################################
 echo "# $lowercaseNamespace/$lowercaseModuleName" > README.md

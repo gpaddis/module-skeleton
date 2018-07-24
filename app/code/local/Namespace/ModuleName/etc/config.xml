@@ -25,4 +25,14 @@
             </namespace_modulename>
         </models>
     </global>
+
+    <frontend>
+        <modules>
+            <Namespace_ModuleName>
+                <files>
+                    <default>Namespace_ModuleName.csv</default>
+                </files>
+            </Namespace_ModuleName>
+        </modules>
+    </frontend>
 </config>
