@@ -1,2 +1,3 @@
 app/code/local/Namespace/ModuleName/            app/code/local/Namespace/ModuleName/
-app/etc/modules/Namespace_ModuleName.xml        app/etc/modules/Namespace_ModuleName.xml 
+app/etc/modules/Namespace_ModuleName.xml        app/etc/modules/Namespace_ModuleName.xml
+app/locale/en_US/Namespace_ModuleName.csv       app/locale/en_US/Namespace_ModuleName.csv
