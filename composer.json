@@ -8,7 +8,12 @@
             "email": "authorEmail"
         }
     ],
+
     "require": {
-        "magento-hackathon/magento-composer-installer":"*"
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+
+    "require-dev": {
+        "ecomdev/ecomdev_phpunit": "*"
     }
 }

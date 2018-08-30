@@ -37,4 +37,12 @@
             </modules>
         </translate>
     </frontend>
+
+    <phpunit>
+        <suite>
+            <modules>
+                <Namespace_ModuleName />
+            </modules>
+        </suite>
+    </phpunit>
 </config>
