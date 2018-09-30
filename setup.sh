@@ -19,7 +19,7 @@ searchAndReplace() {
     if [ "$is_macos" = no ]; then
         grep -Rl "$source" --exclude "$0" | xargs sed -i "s/$source/$destination/g"
     elif [ "$is_macos" = yes ]; then
-        # Implement the right commands for mac
+        grep -Rl "$source" --exclude "$0" . | xargs sed -i '' "s/$source/$destination/g"
     fi
 }
 
