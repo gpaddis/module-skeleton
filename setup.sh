@@ -7,6 +7,22 @@
 # Author: Gianpiero Addis
 # Package: https://github.com/gpaddis/module-skeleton
 
+case `uname -s` in
+    Darwin) is_macos=yes ;;
+    *) is_macos=no ;;
+esac
+
+## Functions ##################################################################
+searchAndReplace() {
+    source="$1"
+    destination="$2"
+    if [ "$is_macos" = no ]; then
+        grep -Rl "$source" --exclude "$0" | xargs sed -i "s/$source/$destination/g"
+    elif [ "$is_macos" = yes ]; then
+        # Implement the right commands for mac
+    fi
+}
+
 ## Basic Values ###############################################################
 namespace=""
 while [[ $namespace = "" ]]; do
@@ -37,15 +53,15 @@ lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 ## Change all references in the files #########################################
 echo "Replacing namespace, module name and author information in all files..."
 
-grep -Rl "Namespace_ModuleName" --exclude "$0" | xargs sed -i "s/Namespace_ModuleName/$uppercaseName/g"
-grep -Rl "namespace_modulename" --exclude "$0" | xargs sed -i "s/namespace_modulename/$lowercaseName/g"
-grep -Rl "Namespace" --exclude "$0" | xargs sed -i "s/Namespace/$namespace/g"
-grep -Rl "ModuleName" --exclude "$0" | xargs sed -i "s/ModuleName/$moduleName/g"
-grep -Rl "namespace" --exclude "$0" | xargs sed -i "s/namespace/$lowercaseNamespace/g"
-grep -Rl "moduleName" --exclude "$0" | xargs sed -i "s/moduleName/$lowercaseModuleName/g"
+searchAndReplace "Namespace_ModuleName" $uppercaseName
+searchAndReplace "namespace_modulename" $lowercaseName
+searchAndReplace "Namespace" $namespace
+searchAndReplace "ModuleName" $moduleName
+searchAndReplace "namespace" $lowercaseNamespace
+searchAndReplace "moduleName" $lowercaseModuleName
 
-grep -Rl "authorName" --exclude "$0" | xargs sed -i "s/authorName/$authorName/g"
-grep -Rl "authorEmail" --exclude "$0" | xargs sed -i "s/authorEmail/$authorEmail/g"
+searchAndReplace "authorName" $authorName
+searchAndReplace "authorEmail" $authorEmail
 
 ## Rename files and directories ###############################################
 echo "Renaming files and directories..."
