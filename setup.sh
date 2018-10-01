@@ -53,15 +53,15 @@ lowercaseName="${lowercaseNamespace}_${lowercaseModuleName}"
 ## Change all references in the files #########################################
 echo "Replacing namespace, module name and author information in all files..."
 
-searchAndReplace "Namespace_ModuleName" $uppercaseName
-searchAndReplace "namespace_modulename" $lowercaseName
-searchAndReplace "Namespace" $namespace
-searchAndReplace "ModuleName" $moduleName
-searchAndReplace "namespace" $lowercaseNamespace
-searchAndReplace "moduleName" $lowercaseModuleName
+searchAndReplace "Namespace_ModuleName" "$uppercaseName"
+searchAndReplace "namespace_modulename" "$lowercaseName"
+searchAndReplace "Namespace" "$namespace"
+searchAndReplace "ModuleName" "$moduleName"
+searchAndReplace "namespace" "$lowercaseNamespace"
+searchAndReplace "moduleName" "$lowercaseModuleName"
 
-searchAndReplace "authorName" $authorName
-searchAndReplace "authorEmail" $authorEmail
+searchAndReplace "authorName" "$authorName"
+searchAndReplace "author@email.net" "$authorEmail"
 
 ## Rename files and directories ###############################################
 echo "Renaming files and directories..."
