@@ -1,7 +1,6 @@
 <?php
 
 /**
- * @category   Namespace
  * @package    Namespace_ModuleName
  * @author     authorName <author@email.net>
  *
