@@ -10,10 +10,14 @@
     ],
 
     "require": {
-        "magento-hackathon/magento-composer-installer": "*"
+        "magento-hackathon/magento-composer-installer": "*",
+        "nesbot/carbon": "^2.5"
     },
 
     "require-dev": {
         "ecomdev/ecomdev_phpunit": "dev-dev"
+    },
+    "extra": {
+        "magento-root-dir": "root"
     }
 }
