@@ -14,6 +14,6 @@
     },
 
     "require-dev": {
-        "ecomdev/ecomdev_phpunit": "*"
+        "ecomdev/ecomdev_phpunit": "dev-dev"
     }
 }
