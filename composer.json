@@ -17,8 +17,5 @@
     "require-dev": {
         "ecomdev/ecomdev_phpunit": "dev-dev",
         "mockery/mockery": "^1.0"
-    },
-    "extra": {
-        "magento-root-dir": "root"
     }
 }
