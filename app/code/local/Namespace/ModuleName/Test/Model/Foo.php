@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 /**
  * @package    Namespace_ModuleName
  * @author     authorName <author@email.net>
@@ -15,5 +17,12 @@ class Namespace_ModuleName_Test_Model_Foo extends EcomDev_PHPUnit_Test_Case
     public function exampleTest()
     {
         $this->assertTrue(true);
+    }
+
+    public function testItReturnsTheCurrentDateTime()
+    {
+        $foo = Mage::getModel('namespace_modulename/foo');
+        $now = Carbon::now();
+        $this->assertEquals($now, $foo->getCurrentDatetime());
     }
 }

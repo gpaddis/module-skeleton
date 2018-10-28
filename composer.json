@@ -11,6 +11,7 @@
 
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
+        "firegento/psr0autoloader": "*",
         "nesbot/carbon": "^2.5"
     },
 
