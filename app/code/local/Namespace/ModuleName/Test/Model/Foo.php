@@ -19,10 +19,10 @@ class Namespace_ModuleName_Test_Model_Foo extends EcomDev_PHPUnit_Test_Case
         $this->assertTrue(true);
     }
 
-    public function testItReturnsTheCurrentDateTime()
+    public function testItReturnsTheCurrentDate()
     {
         $foo = Mage::getModel('namespace_modulename/foo');
-        $now = Carbon::now();
-        $this->assertEquals($now, $foo->getCurrentDatetime());
+        $today = Carbon::now()->toDateString();
+        $this->assertEquals($today, $foo->getCurrentDate());
     }
 }

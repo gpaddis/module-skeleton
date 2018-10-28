@@ -8,8 +8,8 @@ use Carbon\Carbon;
  */
 class Namespace_ModuleName_Model_Foo extends Mage_Core_Model_Abstract
 {
-    public function getCurrentDatetime()
+    public function getCurrentDate()
     {
-        return Carbon::now();
+        return Carbon::now()->toDateString();
     }
 }
