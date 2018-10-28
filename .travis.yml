@@ -21,4 +21,4 @@ before_script:
   - export INSTALL_DEPENDENCIES=1
 
 script:
-- curl -sSL https://raw.githubusercontent.com/gpaddis/MageTestStand/install-module-dependencies/setup.sh | bash
+- curl -sSL https://raw.githubusercontent.com/gpaddis/MageTestStand/master/setup.sh | bash
